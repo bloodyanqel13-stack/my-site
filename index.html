@@ -1,104 +1,157 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Keane Video Sayfası</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Tolga Arslan — Yakında</title>
+  <meta name="description" content="Yakında: kişisel site. Haber almak için e-posta bırakın." />
   <style>
-    html, body {
-      margin: 0;
-      padding: 0;
-      height: 100%;
-      background: black;
-      color: white;
-      font-family: Arial, sans-serif;
+    :root{
+      --bg:#0b0b0d;
+      --accent:#ff3366;
+      --muted:#bdbdbd;
+      --card:#0f1720cc;
+      --glass: rgba(255,255,255,0.04);
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%;margin:0;font-family:Inter,system-ui,Arial,sans-serif;background:linear-gradient(180deg,#060606 0%, #0c0c10 100%);color:#fff}
+    .wrap{
+      min-height:100%;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:32px;
+    }
+    .card{
+      width:100%;
+      max-width:920px;
+      background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      border-radius:14px;
+      padding:36px;
+      box-shadow:0 10px 40px rgba(2,6,23,0.6);
+      backdrop-filter: blur(6px);
+      border: 1px solid rgba(255,255,255,0.03);
+    }
+    .top {
+      display:flex;
+      align-items:center;
+      gap:18px;
+      margin-bottom:22px;
+    }
+    .logo {
+      width:68px;
+      height:68px;
+      border-radius:10px;
+      background:var(--glass);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      color:var(--accent);
+      font-weight:700;
+      font-size:18px;
+      border:1px solid rgba(255,255,255,0.04);
+    }
+    h1{
+      margin:0;
+      font-size:28px;
+      letter-spacing:-0.02em;
+    }
+    p.lead{
+      color:var(--muted);
+      margin:14px 0 22px 0;
+      line-height:1.5;
     }
 
-    .video-container {
-      position: relative;
-      width: 100%;
-      height: 90vh;
-      overflow: hidden;
+    .cta-row{
+      display:flex;
+      gap:12px;
+      align-items:center;
+      flex-wrap:wrap;
+      margin-bottom:18px;
     }
 
-    .video-container iframe {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      border: 0;
+    .email-form{
+      display:flex;
+      gap:8px;
+      width:100%;
+    }
+    .email-form input{
+      flex:1;
+      padding:12px 14px;
+      border-radius:10px;
+      border:1px solid rgba(255,255,255,0.06);
+      background:transparent;
+      color:#fff;
+      outline:none;
+      min-width:180px;
+    }
+    .email-form button{
+      padding:12px 18px;
+      border-radius:10px;
+      border:0;
+      background:var(--accent);
+      color:#fff;
+      font-weight:700;
+      cursor:pointer;
+      box-shadow:0 6px 18px rgba(255,51,102,0.12);
     }
 
-    .content {
-      background-color: #5a189a;
-      text-align: center;
-      padding: 30px 20px;
+    .meta{
+      color:var(--muted);
+      font-size:13px;
+      display:flex;
+      gap:16px;
+      align-items:center;
+      flex-wrap:wrap;
     }
 
-    footer {
-      background-color: #2b2b2b;
-      color: #ccc;
-      padding: 20px;
-      text-align: center;
+    /* footer small */
+    .foot{
+      margin-top:18px;
+      display:flex;
+      justify-content:space-between;
+      gap:12px;
+      align-items:center;
+      color:var(--muted);
+      font-size:13px;
     }
 
-    form {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 10px;
-      max-width: 400px;
-      margin: 0 auto;
-    }
-
-    input, textarea {
-      width: 100%;
-      padding: 10px;
-      border-radius: 6px;
-      border: none;
-      resize: none;
-    }
-
-    button {
-      padding: 10px 20px;
-      border: none;
-      border-radius: 6px;
-      background-color: #6a4c93;
-      color: white;
-      cursor: pointer;
-    }
-
-    button:hover {
-      background-color: #7b2cbf;
+    @media (max-width:640px){
+      .card{padding:20px}
+      h1{font-size:22px}
+      .logo{width:56px;height:56px;font-size:16px}
+      .email-form{flex-direction:column}
+      .email-form button{width:100%}
     }
   </style>
 </head>
 <body>
+  <div class="wrap">
+    <main class="card" role="main" aria-labelledby="title">
+      <div class="top">
+        <div class="logo" aria-hidden="true">TA</div>
+        <div>
+          <h1 id="title">tolqaarslan.com — Yakında</h1>
+          <p class="lead">Kişisel yazılar, videolar ve kısa duyurular için hazırlanıyor. Hazır olduğunda haberdar olmak ister misin?</p>
+        </div>
+      </div>
 
-  <div class="video-container">
-    <iframe 
-      src="https://www.youtube.com/embed/Pfx7d4qhC5E?autoplay=1&mute=0&loop=1&playlist=Pfx7d4qhC5E&modestbranding=1&rel=0&controls=1"
-      title="Keane - Bedshaped"
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-      allowfullscreen>
-    </iframe>
+      <!-- E-posta formu: Formspree ile çalışacak. {your-form-id} kısmını kendi Formspree ID'n ile değiştir. -->
+      <form class="email-form" action="https://formspree.io/f/{your-form-id}" method="POST">
+        <input type="email" name="email" placeholder="E-posta adresin (ör. name@ornek.com)" required aria-label="E-posta adresin">
+        <button type="submit">Beni Haberdar Et</button>
+      </form>
+
+      <div class="meta" style="margin-top:14px">
+        <div>🔒 Güvenlik: site HTTPS etkinleşince otomatik olarak güvenli olur.</div>
+        <div>🕒 Tahmini: SSL birkaç dakika ila birkaç saat sürebilir.</div>
+      </div>
+
+      <div class="foot">
+        <div>© Tolga Arslan</div>
+        <div style="opacity:.9">İletişim: <a href="mailto:hello@tolqaarslan.com" style="color:var(--muted);text-decoration:underline">hello@tolqaarslan.com</a></div>
+      </div>
+    </main>
   </div>
-
-  <div class="content">
-    <h2>Biraz yazı veya açıklama kısmı</h2>
-    <p>Buraya video hakkında veya siteyle ilgili kısa notlar eklenebilir.</p>
-  </div>
-
-  <footer>
-    <h3>Mesaj Gönder</h3>
-    <form action="https://formspree.io/f/{your-form-id}" method="POST">
-      <input type="text" name="name" placeholder="Adınız" required>
-      <input type="email" name="email" placeholder="E-posta adresiniz" required>
-      <textarea name="message" rows="4" placeholder="Mesajınız" required></textarea>
-      <button type="submit">Gönder</button>
-    </form>
-  </footer>
-
 </body>
 </html>
